@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Job Application Form</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom, #eef2f3, #8e9eab);
+      padding: 2rem;
+    }
+    .form-container {
+      background: white;
+      padding: 3rem;
+      max-width: 740px;
+      margin: auto;
+      border-radius: 16px;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+      border: 2px solid #ccc;
+      animation: slideUp 0.7s ease-in-out;
+    }
+    @keyframes slideUp {
+      from {
+        transform: translateY(50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #2c3e50;
+      font-size: 2.2rem;
+      font-weight: 700;
+    }
+    label {
+      display: block;
+      margin: 1rem 0 0.25rem;
+      font-weight: 600;
+      color: #34495e;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 0.9rem;
+      border-radius: 6px;
+      border: 1px solid #bdc3c7;
+      background-color: #fdfdfd;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+    }
+    input:focus, textarea:focus, select:focus {
+      border-color: #3498db;
+      background-color: #f5fafd;
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    {{ content | safe }}
+  </div>
+  {{ script | safe }}
+</body>
+</html>

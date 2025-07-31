@@ -1,0 +1,226 @@
+[
+  {
+    "user": "hello",
+    "ai": "Hello! It's nice to meet you. Is there something I can help you with or would you like to chat?"
+  },
+  {
+    "user": "what is my name?",
+    "ai": "I'm happy to help! However, I don't have any information about your name because you didn't provide it. Could you please tell me your name so I can better assist you?"
+  },
+  {
+    "user": "I need a registration form with name, email, and password",
+    "ai": "Here's an example of a basic registration form with fields for name, email, and password:\n\n**Registration Form**\n\n<form>\n  <label for=\"name\">Name:</label>\n  <input type=\"text\" id=\"name\" name=\"name\"><br><br>\n\n  <label for=\"email\">Email:</label>\n  <input type=\"email\" id=\"email\" name=\"email\"><br><br>\n\n  <label for=\"password\">Password:</label>\n  <input type=\"password\" id=\"password\" name=\"password\"><br><br>\n\n  <button type=\"submit\">Register</button>\n</form>\n\nThis form uses HTML elements to create the different fields and labels. The `<input>` elements are used to create text input fields for the name, email, and password. The `type` attribute specifies the type of input field (in this case, text or email), and the `id` and `name` attributes specify the unique identifier for each field.\n\nNote that this is a very basic form, and you may want to add additional features such as:\n\n* Validation: checking that the user has entered valid data (e.g. that the password is strong enough)\n* Error handling: displaying error messages if the user enters invalid data\n* Security measures: hashing or encrypting passwords, for example\n* Additional fields: asking for other information such as address or phone number\n\nLet me know if you have any specific requirements or questions!"
+  },
+  {
+    "user": " Generate a job application form with name, contact number, resume upload",
+    "ai": "Here is a simple job application form:\n\n**Job Application Form**\n\n**Personal Information**\n\n* **Name:** ______________________________________________________\n* **Contact Number:** _______________________________________________\n\n**Resume Upload**\n\nPlease attach your updated resume in PDF or Word format.\n\n[Insert file upload field]\n\n**Additional Information (Optional)**\n\n* **Cover Letter/Statement:** (Please provide a brief introduction to why you are interested in the job and how your skills align with the position. Maximum 250 words)\n* **Any additional information you would like to share about your application:**\n\n**Submission**\n\nI certify that the information provided is accurate and complete. I understand that providing false or misleading information may disqualify me from consideration.\n\n[Insert submit button]\n\nNote: This is a basic form, you can add or remove fields as per your requirement. Also, make sure to adjust the formatting and layout according to your needs."
+  },
+  {
+    "user": "I need a registration form with name and email",
+    "ai": "Here's a basic HTML registration form with fields for name and email:\n\n```\n<form>\n  <label for=\"name\">Name:</label>\n  <input type=\"text\" id=\"name\" name=\"name\"><br><br>\n\n  <label for=\"email\">Email:</label>\n  <input type=\"email\" id=\"email\" name=\"email\"><br><br>\n\n  <button type=\"submit\">Register</button>\n</form>\n```\n\nThis form has two input fields: one for the user's name and another for their email address. The `type` attribute of the first `<input>` element is set to `\"text\"` because it's a text field, while the second input field has its `type` attribute set to `\"email\"` to help ensure that the user enters a valid email address.\n\nThe form also includes a submit button with the label \"Register\". When the user submits the form, the data will be sent to your server or processing script for further handling."
+  },
+  {
+    "user": "",
+    "ai": "It seems like we're starting from scratch! As our conversation begins, I don't have any information about you. Would you like to introduce yourself or share something about your interests? I'm here to listen and help with any questions or topics you'd like to discuss."
+  },
+  {
+    "user": "I need a form to apply for a certificate with name, roll number, and purpose.",
+    "ai": "\u2705 Your form is ready! Click here to view it: http://localhost:5000/forms/form_1749650087.html"
+  },
+  {
+    "user": "I need a form to request leave with date, reason, and signature.",
+    "ai": "\u2705 Your form is ready! Click here to open it in your browser:\nhttp://localhost:5000/forms/form_a5689ee2.html"
+  },
+  {
+    "user": "I need a form to apply for job with name, email, and resume upload",
+    "ai": "\u2705 Your form is ready! Click here to open it in your browser:\nhttp://localhost:5000/forms/form_16b72171.html"
+  },
+  {
+    "user": "application form ",
+    "ai": "\u2705 Your form is ready! Click here to open it in your browser:\nhttp://localhost:5000/forms/form_6a3c8900.html"
+  },
+  {
+    "user": "certificate form",
+    "ai": "\u2705 Your form is ready! Click here to open it in your browser:\nhttp://localhost:5000/forms/form_74c44f73.html"
+  },
+  {
+    "user": "certificate form",
+    "ai": "\u2705 Your form is ready! Click here to open it in your browser:\nhttp://localhost:5000/forms/form_2e03ee9a.html"
+  },
+  {
+    "user": "voter ID application form",
+    "ai": "\u2705 Your form is ready! Click here to open it in your browser:\nhttp://localhost:5000/forms/form_1c1841ee.html"
+  },
+  {
+    "user": "i need form for course applying ",
+    "ai": "\u2705 Your form is ready! Click here to open it in your browser:\nhttp://localhost:5000/forms/form_b5745bfe.html"
+  },
+  {
+    "user": "Create a job application form",
+    "ai": "\u2705 Your form is ready! Click the link below:\n\u274c Your system does not have enough memory to generate the form."
+  },
+  {
+    "user": "Create a job application form",
+    "ai": "\u2705 Your form is ready! Click the link below:\n\u274c Your system does not have enough memory to generate the form."
+  },
+  {
+    "user": "Create a job application form",
+    "ai": "\u2705 Your form is ready! Click the link below:\n\u274c Your system does not have enough memory to generate the form."
+  },
+  {
+    "user": "Create a job application form",
+    "ai": "\u2705 Your form is ready! Click the link below:\n\u274c Your system does not have enough memory to generate the form."
+  },
+  {
+    "user": "Create a job application form",
+    "ai": "\u2705 Your form is ready! Click the link below:\n\u274c Error while generating form: model \"codellama:7b-instruct-q4_0\" not found, try pulling it first (status code: 404)"
+  },
+  {
+    "user": "Create a job application form",
+    "ai": "\u2705 Your form is ready! Click the link below:\n\u274c Error while generating form: model \"codellama:7b-instruct-q4_0\" not found, try pulling it first (status code: 404)"
+  },
+  {
+    "user": "Create a job application form",
+    "ai": "\u2705 Your form is ready! Click the link below:\nhttp://localhost:5000/forms/form_14583c73.html"
+  },
+  {
+    "user": "create a feedback form",
+    "ai": "\u2705 Your form is ready: \u274c Theme template not found."
+  },
+  {
+    "user": "create a feedback form ",
+    "ai": "\u2705 Your form is ready: \u274c Theme template not found."
+  },
+  {
+    "user": "create a feedback form ",
+    "ai": "\u2705 Your form is ready: http://localhost:5000/forms/form_35b64e9f.html"
+  },
+  {
+    "user": "create a feedback form",
+    "ai": "\u2705 Your form is ready: http://localhost:5000/forms/form_8ebd7035.html"
+  },
+  {
+    "user": "create a feedback form",
+    "ai": "\u2705 Your form is ready: http://localhost:5000/forms/form_d911945b.html"
+  },
+  {
+    "user": "create a feedbackform",
+    "ai": "\u2705 Your form is ready: http://localhost:5000/forms/form_2e8057c7.html"
+  },
+  {
+    "user": "create a feedback form",
+    "ai": "\u2705 Your form is ready: http://localhost:5000/forms/form_f06aa3b8.html"
+  },
+  {
+    "user": "create a feedback form",
+    "ai": "\u2705 Your form is ready: http://localhost:5000/forms/form_b8f2eb79.html"
+  },
+  {
+    "user": "create a feedback form",
+    "ai": "\u2705 Your form is ready: http://localhost:5000/forms/form_2d057556.html"
+  },
+  {
+    "user": "create a feedback form",
+    "ai": "\u2705 Your form is ready: http://localhost:5000/forms/form_fe109cbf.html"
+  },
+  {
+    "user": "create a school application form",
+    "ai": "\u2705 Your form is ready: http://localhost:5000/forms/form_2ff87121.html"
+  },
+  {
+    "user": "create me a NASA application form",
+    "ai": "\u2705 Your form is ready! Click the link below:\nhttp://localhost:5000/forms/form_d6330115.html"
+  },
+  {
+    "user": "create a Nasa application form",
+    "ai": "\u2705 Your form is ready: http://localhost:5000/forms/form_b1f769ae.html"
+  },
+  {
+    "user": "create me a NASA application form",
+    "ai": "\u2705 Your form is ready: http://localhost:5000/forms/form_34212dd7.html"
+  },
+  {
+    "user": "create me a Voters application form",
+    "ai": "\u2705 Your form is ready: http://localhost:5000/forms/form_36e9ff88.html"
+  },
+  {
+    "user": "create a nasa application form",
+    "ai": "\u2705 Your form is ready: http://localhost:5000/forms/form_2297abad.html"
+  },
+  {
+    "user": "create a NASA application form",
+    "ai": "\u2705 Your form is ready: http://localhost:5000/forms/form_96cac1da.html"
+  },
+  {
+    "user": "create a NASA application form",
+    "ai": "\u2705 Your form is ready: http://localhost:5000/forms/form_beeb2565.html"
+  },
+  {
+    "user": "create a NASA application form",
+    "ai": "\u2705 Your form is ready: http://localhost:5000/forms/form_0393a864.html"
+  },
+  {
+    "user": "create a NASA application form",
+    "ai": "\u2705 Your form is ready: http://localhost:5000/forms/form_7d3d0deb.html"
+  },
+  {
+    "user": "make a permission form for submitting in school",
+    "ai": "\u2705 Your form is ready: http://localhost:5000/forms/form_3dc9f680.html"
+  },
+  {
+    "user": "generate me NASA application form",
+    "ai": "\u2705 Your form is ready: http://localhost:5000/forms/form_c02bc881.html"
+  },
+  {
+    "user": "create a feedback form for institution",
+    "ai": "\u2705 Your form is ready: http://localhost:5000/forms/form_39d16cc2.html"
+  },
+  {
+    "user": "create a professional feedback form",
+    "ai": "\u2705 Your form is ready: http://localhost:5000/forms/form_cbd4789c.html"
+  },
+  {
+    "user": "create feedback form with rating, and description",
+    "ai": "\u2705 Your form is ready: http://localhost:5000/forms/form_5af67d90.html"
+  },
+  {
+    "user": "create a feedback form",
+    "ai": "\u2705 Your form is ready: http://localhost:5000/forms/form_5819e8cd.html"
+  },
+  {
+    "user": "create a feedback form",
+    "ai": "\u2705 Your form is ready: http://localhost:5000/forms/form_3eff63d3.html"
+  },
+  {
+    "user": "create a NASA application form",
+    "ai": "\u2705 Your form is ready: http://localhost:5000/forms/form_5f719864.html"
+  },
+  {
+    "user": "create a NASA application form",
+    "ai": "\u2705 Your form is ready: http://localhost:5000/forms/form_baf52a22.html"
+  },
+  {
+    "user": "create me a NASA application form",
+    "ai": "\u2705 Your form is ready! Click the link below:\nhttp://localhost:5000/forms/form_022067a5.html"
+  },
+  {
+    "user": "create a NASA application form",
+    "ai": "\u2705 Your form is ready: http://localhost:5000/forms/form_ead8e3a5.html"
+  },
+  {
+    "user": "create feedback form",
+    "ai": "\u2705 Your form is ready: http://localhost:5000/forms/form_2bb8c1c0.html"
+  },
+  {
+    "user": "create feedback form",
+    "ai": "\u2705 Your form is ready: http://localhost:5000/forms/form_329aafb2.html"
+  },
+  {
+    "role": "user",
+    "content": "create a feedback form for sangamam event where name field is required and number of family members and overall experience of the event and rating of the food out of 5 and specify the footer of the\u00a0form\u00a0as\u00a0daimler"
+  },
+  {
+    "role": "assistant",
+    "content": "Error from AI: 1 validation error for Message\nrole\n  Field required [type=missing, input_value={'user': 'hello', 'ai': \"...ould you like to chat?\"}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing"
+  }
+]

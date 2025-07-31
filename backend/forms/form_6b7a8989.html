@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Creative Form</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top left, #ffecd2, #fcb69f);
+      padding: 2rem;
+    }
+    .form-container {
+      background: white;
+      padding: 3rem;
+      max-width: 720px;
+      margin: auto;
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      border: 3px dashed #f39c12;
+      animation: floatIn 0.8s ease-out;
+    }
+    @keyframes floatIn {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #e74c3c;
+      font-size: 2.2rem;
+      font-weight: 700;
+      text-shadow: 1px 1px #fceabb;
+    }
+    label {
+      display: block;
+      margin: 1rem 0 0.25rem;
+      font-weight: bold;
+      color: #d35400;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 0.85rem;
+      border-radius: 10px;
+      border: 2px dashed #f39c12;
+      background-color: #fff9f2;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+    input:focus, textarea:focus, select:focus {
+      border-color: #e67e22;
+      background-color: #fff4e6;
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    
+        <form action="/submit" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="form_id" value="6b7a8989">
+            <h2>Kabaddi Zone Application Form - Santosh</h2>
+
+<p>If you are interested in playing Kabaddi at the zone level, please fill out the form below and we will get back to you as soon as possible.</p>
+
+
+  <input type="hidden" name="form_id" value="6b7a8989">
+  <div class="section">
+    <label for="name">Name:</label>
+    <input type="text" required name="name" id="name" placeholder="Full Name" required>
+  </div>
+  <div class="section">
+    <label for="email">Email:</label>
+    <input type="email" required name="email" id="email" placeholder="Your Email" required>
+  </div>
+  <div class="section">
+    <label for="phone">Phone Number:</label>
+    <input type="tel" name="phone" id="phone" placeholder="Your Phone Number" required>
+  </div>
+  <div class="section">
+    <label for="age_group">Age Group:</label>
+    <select required name="age_group" id="age_group">
+      <option value="adult">Adult (18 and above)</option>
+      <option value="young adult">Young Adult (18-25)</option>
+      <option value="college student">College Student (18-30)</option>
+      <option value="junior">Junior (16-18)</option>
+    </select>
+  </div>
+  <div class="section">
+    <label for="gender">Gender:</label>
+    <select required name="gender" id="gender">
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="other">Other (please specify)</option>
+    </select>
+  </div>
+  <div class="section">
+    <label for="experience">Experience:</label>
+    <textarea required name="experience" id="experience" placeholder="Your Kabaddi Experience (if any)"></textarea>
+  </div>
+  <button type="submit">Submit Application</button>
+            <div class="text-center mt-6">
+                <button type="submit" class="bg-gradient-to-r from-pink-500 to-orange-400 hover:from-pink-600 hover:to-orange-500 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+                    🚀 Submit Form
+                </button>
+            </div>
+        </form>
+        
+  </div>
+  
+    <script>
+      document.querySelectorAll("input, textarea, select").forEach((el, i, arr) => {
+        el.addEventListener("keydown", function(e) {
+          if (e.key === "Enter") {
+            e.preventDefault();
+            const next = arr[i + 1];
+            if (next) next.focus();
+          }
+        });
+      });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dark Form</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, #1e1e2f, #111122);
+      color: #f0f0f0;
+      padding: 2rem;
+    }
+    .form-container {
+      background-color: #1e1e2e;
+      padding: 3rem;
+      max-width: 720px;
+      margin: auto;
+      border-radius: 18px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+      border: 2px solid #2f2f44;
+      animation: fadeSlide 0.7s ease-in-out;
+    }
+    @keyframes fadeSlide {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #ff8c66;
+      font-size: 2.2rem;
+      font-weight: 700;
+      text-shadow: 1px 1px #000;
+    }
+    label {
+      display: block;
+      margin: 1rem 0 0.25rem;
+      font-weight: 600;
+      color: #ddd;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 0.9rem;
+      border-radius: 10px;
+      border: 1px solid #444;
+      background-color: #2c2c3a;
+      color: #fff;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+    input:focus, textarea:focus, select:focus {
+      border-color: #ff7e5f;
+      background-color: #3a3a4a;
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    {{ content | safe }}
+  </div>
+  {{ script | safe }}
+</body>
+</html>

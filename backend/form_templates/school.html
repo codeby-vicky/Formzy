@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>School Form</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(135deg, #d3f4ff, #b0e0e6);
+      padding: 2rem;
+    }
+    .form-container {
+      background: #ffffff;
+      padding: 2.5rem;
+      max-width: 720px;
+      margin: auto;
+      border-radius: 15px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+      border: 3px solid #0077b6;
+      animation: dropFade 0.6s ease-out;
+    }
+    @keyframes dropFade {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 1.2rem;
+      color: #0077b6;
+      font-size: 2.1rem;
+      font-weight: 700;
+    }
+    label {
+      display: block;
+      margin: 1rem 0 0.25rem;
+      font-weight: 600;
+      color: #023e8a;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 0.7rem;
+      border-radius: 8px;
+      border: 2px solid #90e0ef;
+      font-size: 1rem;
+      background-color: #e0f7fa;
+      transition: border-color 0.3s ease;
+    }
+    input:focus, textarea:focus, select:focus {
+      border-color: #00b4d8;
+      background-color: #caf0f8;
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    {{ content | safe }}
+  </div>
+  {{ script | safe }}
+</body>
+</html>

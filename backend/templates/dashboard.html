@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+  <title>Dashboard</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f3f4f6;
+    }
+    main.dashboard {
+      padding: 100px 2rem 2rem 2rem;
+    }
+    h2 {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #333;
+    }
+    h3 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin: 2rem 0 1rem 0;
+      color: #4a4a4a;
+    }
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      background: linear-gradient(90deg, #6a11cb, #2575fc);
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      backdrop-filter: blur(10px);
+      box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .logo {
+      font-size: 1.7rem;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+    }
+    .logo span {
+      font-size: 1.8rem;
+      font-weight: 800;
+      background: linear-gradient(90deg, #ff7eb3, #8e44ad, #6dd5ed);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientText 5s infinite linear;
+    }
+    @keyframes gradientText {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 1.6rem;
+      font-size: 1.1rem;
+      position: relative;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: #fff;
+      left: 0;
+      bottom: -4px;
+      transition: 0.3s;
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+    .btn-purple {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .btn-purple:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    .stats {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin: 1rem 0;
+    }
+    .stats div {
+      flex: 1 1 180px;
+      background: #dbeafe;
+      padding: 1.25rem;
+      margin: 0.5rem;
+      text-align: center;
+      font-size: 1rem;
+      font-weight: bold;
+      color: #333;
+      border-radius: 12px;
+      box-shadow: 0px 4px 18px rgba(0,0,0,0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .stats div:hover {
+      transform: translateY(-3px);
+      box-shadow: 0px 8px 25px rgba(0,0,0,0.18);
+    }
+
+    /* Clear All Button */
+    #clearAllBtn {
+      padding: 0.5rem 1rem;
+      background-color: crimson;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      margin: 0.5rem 0 1.5rem 0;
+      float: right;
+      transition: background-color 0.3s ease;
+    }
+    #clearAllBtn:hover {
+      background-color: darkred;
+    }
+
+    .form-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      clear: both;
+    }
+    .form-card {
+      flex: 1 1 30%;
+      max-width: 30%;
+      background: #dbeafe;
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0px 4px 15px rgba(0,0,0,0.07);
+      transition: all 0.25s ease;
+      position: relative;
+      margin: 1rem 0.5rem;
+    }
+    .form-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0px 12px 25px rgba(0,0,0,0.12);
+      background: #c7d2fe;
+    }
+    .form-card strong {
+      font-size: 1.1rem;
+      color: #333;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .form-card a {
+      display: inline-block;
+      font-weight: bold;
+      color: #007BFF;
+      text-decoration: none;
+      margin-top: 0.5rem;
+    }
+    .form-card a:hover {
+      color: #0056b3;
+      text-decoration: underline;
+    }
+    #viewMoreBtn {
+      display: block;
+      margin: 1rem auto;
+      font-size: 1rem;
+      font-weight: bold;
+      padding: 0.5rem 1.5rem;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      background-color: #2575fc;
+      color: #fff;
+    }
+    #viewMoreBtn:hover {
+      background-color: #1d5fd1;
+    }
+
+    /* Filter input styling */
+    .filters {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      align-items: center;
+    }
+    .filters input, .filters select {
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+    #profileDropdown a:hover {
+  background-color: #f3f4f6;
+}
+body.dark {
+  background: #1e1e2f;
+  color: #e0e0e0;
+}
+body.dark .header {
+  background: linear-gradient(90deg, #000428, #004e92);
+}
+body.dark .stats div,
+body.dark .form-card {
+  background-color: #2e2e3e;
+  color: #e0e0e0;
+}
+body.dark .form-card a {
+  color: #9abaff;
+}
+body.dark #profileDropdown {
+  background: #2e2e3e;
+  color: white;
+}
+body.dark #profileDropdown a:hover {
+  background-color: #3e3e4e;
+}
+  </style>
+</head>
+<body>
+  <header class="header">
+  <div class="logo">
+    <img src="/static/robot-one.svg" alt="Logo" style="height: 32px; vertical-align: middle; margin-right: 8px;">
+    <span>FormGen Pro</span>
+  </div>
+  <nav style="display: flex; align-items: center; justify-content: flex-end; gap: 1rem; flex: 1; position: relative;">
+    <a href="/" title="Create New Form">
+      <button class="btn-purple">Create Form</button>
+    </a>
+    <button class="btn-purple" id="toggleThemeBtn">🌓</button>
+    <!-- Profile Dropdown -->
+    <div class="profile-container" style="position: relative;">
+      <img src="/static/profile.svg" alt="User Profile" id="profileIcon"
+           style="width: 32px; height: 32px; border-radius: 50%; cursor: pointer;" />
+
+      <div id="profileDropdown" style="
+        display: none;
+        position: absolute;
+        right: 0;
+        top: 40px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        min-width: 160px;
+        z-index: 1000;
+      ">
+        <a href="/profile" style="display: block; padding: 10px 16px; color: #333; text-decoration: none;"> My Profile</a>
+        <a href="/settings" style="display: block; padding: 10px 16px; color: #333; text-decoration: none;"> Settings</a>
+        <a href="/logout" style="display: block; padding: 10px 16px; color: #e53935; text-decoration: none;"> Logout</a>
+        
+      </div>
+    </div>
+  </nav>
+</header>
+
+  <main class="dashboard">
+    <h2>Dashboard</h2>
+    <p>Welcome back <strong>{{ user_email }}</strong>!</p>
+
+    <div class="stats">
+      <div>Total Forms: {{ form_count }}</div>
+      <div>Total Responses: {{ response_count }}</div>
+      <div>Active Forms: {{ active_count }}</div>
+    </div>
+
+    <!-- Clear All Button -->
+    <button id="clearAllBtn" title="Delete all forms from the dashboard">🗑️ Clear All Forms</button>
+
+    <h3>Your Forms</h3>
+
+    <!-- Filters -->
+    <div class="filters">
+      <input type="text" id="searchInput" placeholder="🔍 Search forms by title...">
+    </div>
+
+    <div class="form-list" id="formList">
+      {% for form in forms %}
+        <div class="form-card" data-theme="{{ form.theme }}" data-prompt="{{ form.prompt | lower }}">
+          <strong>{{ form.prompt }}</strong><br>
+          Theme: {{ form.theme }}<br>
+          <a href="{{ url_for('serve_form', filename=form.generated_file) }}" target="_blank">View</a>
+        </div>
+      {% endfor %}
+    </div>
+
+    <button id="viewMoreBtn">View More</button>
+  </main>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const forms = Array.from(document.querySelectorAll('.form-card'));
+    const viewMoreBtn = document.getElementById("viewMoreBtn");
+    const searchInput = document.getElementById("searchInput");
+    const themeFilter = document.getElementById("themeFilter");
+    const clearAllBtn = document.getElementById("clearAllBtn");
+
+    const visibleCount = 3;
+
+    function updateList() {
+      forms.forEach((card, index) => {
+        card.style.display = index < visibleCount ? 'block' : 'none';
+      });
+      viewMoreBtn.textContent = forms.length > visibleCount && forms[visibleCount]?.style.display === 'none'
+        ? 'View More'
+        : 'View Less';
+    }
+
+    viewMoreBtn.addEventListener('click', function () {
+      const isExpanded = forms[visibleCount]?.style.display === 'none';
+      forms.forEach((card, index) => {
+        if (index >= visibleCount) {
+          card.style.display = isExpanded ? 'block' : 'none';
+        }
+      });
+      viewMoreBtn.textContent = isExpanded ? 'View Less' : 'View More';
+    });
+
+    if (forms.length <= visibleCount) {
+      viewMoreBtn.style.display = 'none';
+    } else {
+      updateList();
+    }
+
+    function applyFilters() {
+      const search = searchInput.value.toLowerCase();
+      const theme = themeFilter?.value || "";
+
+      forms.forEach(card => {
+        const cardPrompt = card.dataset.prompt || "";
+        const cardTheme = card.dataset.theme || "";
+        const matchSearch = cardPrompt.includes(search);
+        const matchTheme = theme === "" || cardTheme === theme;
+
+        card.style.display = matchSearch && matchTheme ? 'block' : 'none';
+      });
+    }
+
+    searchInput.addEventListener("input", applyFilters);
+    if (themeFilter) {
+      themeFilter.addEventListener("change", applyFilters);
+    }
+
+    // Read CSRF token from meta tag
+    const metaTag = document.querySelector('meta[name="csrf-token"]');
+    const csrfToken = metaTag ? metaTag.getAttribute('content') : "";
+
+    // Clear All Forms button handler
+    clearAllBtn.addEventListener("click", function () {
+      if (confirm("⚠️ Are you sure you want to delete all forms? This cannot be undone.")) {
+        fetch("/clear-forms", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "X-CSRFToken": csrfToken
+          }
+        })
+          .then(res => res.json())
+          .then(data => {
+            if (data.success) {
+              alert("✅ All forms deleted.");
+              location.reload();
+            } else {
+              alert("❌ Failed to delete forms.");
+            }
+          })
+          .catch(() => {
+            alert("❌ Error occurred while deleting forms.");
+          });
+      }
+    });
+  });
+
+  // Toggle profile dropdown
+  const profileIcon = document.getElementById("profileIcon");
+  const profileDropdown = document.getElementById("profileDropdown");
+
+  profileIcon.addEventListener("click", function () {
+    profileDropdown.style.display = (profileDropdown.style.display === "block") ? "none" : "block";
+  });
+
+  // Close dropdown on click outside
+  document.addEventListener("click", function (event) {
+    if (!profileIcon.contains(event.target) && !profileDropdown.contains(event.target)) {
+      profileDropdown.style.display = "none";
+    }
+  });
+
+  // Dark mode toggle
+  const toggleBtn = document.getElementById("toggleThemeBtn");
+  const htmlBody = document.body;
+
+  function applyTheme() {
+    const theme = localStorage.getItem("theme") || "light";
+    htmlBody.classList.toggle("dark", theme === "dark");
+  }
+  toggleBtn.addEventListener("click", () => {
+    const isDark = htmlBody.classList.toggle("dark");
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+  });
+  applyTheme();
+</script>
+</body>
+</html>

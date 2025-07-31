@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Creative Form</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top left, #ffecd2, #fcb69f);
+      padding: 2rem;
+    }
+    .form-container {
+      background: white;
+      padding: 3rem;
+      max-width: 720px;
+      margin: auto;
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      border: 3px dashed #f39c12;
+      animation: floatIn 0.8s ease-out;
+    }
+    @keyframes floatIn {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #e74c3c;
+      font-size: 2.2rem;
+      font-weight: 700;
+      text-shadow: 1px 1px #fceabb;
+    }
+    label {
+      display: block;
+      margin: 1rem 0 0.25rem;
+      font-weight: bold;
+      color: #d35400;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 0.85rem;
+      border-radius: 10px;
+      border: 2px dashed #f39c12;
+      background-color: #fff9f2;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+    input:focus, textarea:focus, select:focus {
+      border-color: #e67e22;
+      background-color: #fff4e6;
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    
+        <form action="/submit" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="form_id" value="37947a84">
+            <h2>Exam Form</h2>
+<p>This form is used for students to practice exam.</p>
+<input type="hidden" name="form_id" value="37947a84">
+<div class="section">
+  <label>Select Subject:</label>
+  <select required required>
+    <option>Math</option>
+    <option>Science</option>
+    <option>English</option>
+    <option>History</option>
+    <option>Other</option>
+  </select>
+</div>
+<div class="section">
+  <label>Select Difficulty Level:</label>
+  <select required required>
+    <option>Easy</option>
+    <option>Medium</option>
+    <option>Hard</option>
+    <option>Very Hard</option>
+  </select>
+</div>
+<div class="section">
+  <label>Select Topic:</label>
+  <select required required>
+    <option>Numbers</option>
+    <option>Letters</option>
+    <option>Geometry</option>
+    <option>Other</option>
+  </select>
+</div>
+<div class="section">
+  <label>Enter Question:</label>
+  <textarea required placeholder="Enter Your Question Here" required></textarea>
+</div>
+<div class="section">
+  <label>Select Answer Type:</label>
+  <select required required>
+    <option>Single Choice</option>
+    <option>Multiple Choice</option>
+    <option>Short Answer</option>
+    <option>Long Answer</option>
+  </select>
+</div>
+<div class="section">
+  <label>Select Correct Answer:</label>
+  <textarea required placeholder="Enter Your Correct Answer Here" required></textarea>
+</div>
+<div class="section">
+  <label>Select Wrong Answer 1:</label>
+  <textarea required placeholder="Enter Your Wrong Answer Here" required></textarea>
+</div>
+<div class="section">
+  <label>Select Wrong Answer 2:</label>
+  <textarea required placeholder="Enter Your Wrong Answer Here" required></textarea>
+</div>
+<div class="section">
+  <label>Select Wrong Answer 3:</label>
+  <textarea required placeholder="Enter Your Wrong Answer Here" required></textarea>
+</div>
+            <div class="text-center mt-6">
+                <button type="submit" class="bg-gradient-to-r from-pink-500 to-orange-400 hover:from-pink-600 hover:to-orange-500 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+                    🚀 Submit Form
+                </button>
+            </div>
+        </form>
+        
+  </div>
+  
+    <script>
+      document.querySelectorAll("input, textarea, select").forEach((el, i, arr) => {
+        el.addEventListener("keydown", function(e) {
+          if (e.key === "Enter") {
+            e.preventDefault();
+            const next = arr[i + 1];
+            if (next) next.focus();
+          }
+        });
+      });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Creative Form</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top left, #ffecd2, #fcb69f);
+      padding: 2rem;
+    }
+    .form-container {
+      background: white;
+      padding: 3rem;
+      max-width: 720px;
+      margin: auto;
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      border: 3px dashed #f39c12;
+      animation: floatIn 0.8s ease-out;
+    }
+    @keyframes floatIn {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #e74c3c;
+      font-size: 2.2rem;
+      font-weight: 700;
+      text-shadow: 1px 1px #fceabb;
+    }
+    label {
+      display: block;
+      margin: 1rem 0 0.25rem;
+      font-weight: bold;
+      color: #d35400;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 0.85rem;
+      border-radius: 10px;
+      border: 2px dashed #f39c12;
+      background-color: #fff9f2;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+    input:focus, textarea:focus, select:focus {
+      border-color: #e67e22;
+      background-color: #fff4e6;
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    {{ content | safe }}
+  </div>
+  {{ script | safe }}
+</body>
+</html>

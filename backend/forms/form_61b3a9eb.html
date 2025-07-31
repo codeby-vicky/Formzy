@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Professional Form</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom right, #eef2f7, #d7e0ec);
+      padding: 2rem;
+    }
+    .form-container {
+      background: white;
+      padding: 3rem;
+      max-width: 720px;
+      margin: auto;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      border-left: 6px solid #2f4f4f;
+      animation: fadeIn 0.6s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #2c3e50;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    label {
+      display: block;
+      margin: 1rem 0 0.25rem;
+      font-weight: 600;
+      color: #34495e;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 0.75rem;
+      border-radius: 8px;
+      border: 1px solid #bdc3c7;
+      background-color: #f9f9f9;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+    }
+    input:focus, textarea:focus, select:focus {
+      border-color: #2980b9;
+      background-color: #ffffff;
+      outline: none;
+      box-shadow: 0 0 4px rgba(41, 128, 185, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    
+        <form action="/submit" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="form_id" value="61b3a9eb">
+            <h2>Sangamam Event Feedback Form</h2>
+<p>Please take a few minutes to share your feedback about the Sangamam event. Your input is greatly appreciated!</p>
+
+  <div class="section">
+    <label for="name">Your Name:</label>
+    <input type="text" required id="name" name="name" required placeholder="Enter your name" />
+  </div>
+  <div class="section">
+    <label for="family_members">Number of Family Members:</label>
+    <select required id="family_members" name="family_members" required>
+      <option value="" disabled selected>Select</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 or more</option>
+    </select>
+  </div>
+  <div class="section">
+    <label for="experience">Overall Experience of the Event:</label>
+    <textarea required id="experience" name="experience" required placeholder="Write a review (1000 characters max)"></textarea>
+  </div>
+  <div class="section">
+    <label for="food_rating">Food Rating:</label>
+    <select required id="food_rating" name="food_rating" required>
+      <option value="" disabled selected>Select</option>
+      <option value="1">1 - Poor</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 - Excellent</option>
+    </select>
+  </div>
+  <input type="hidden" name="form_id" value="61b3a9eb">
+  <button type="submit">Submit Feedback</button>
+
+<footer>© 2022 Daimler AG. All rights reserved.</footer>
+            <div class="text-center mt-6">
+                <button type="submit" class="bg-gradient-to-r from-pink-500 to-orange-400 hover:from-pink-600 hover:to-orange-500 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+                    🚀 Submit Form
+                </button>
+            </div>
+        </form>
+        
+  </div>
+  
+    <script>
+      document.querySelectorAll("input, textarea, select").forEach((el, i, arr) => {
+        el.addEventListener("keydown", function(e) {
+          if (e.key === "Enter") {
+            e.preventDefault();
+            const next = arr[i + 1];
+            if (next) next.focus();
+          }
+        });
+      });
+    </script>
+    
+</body>
+</html>
