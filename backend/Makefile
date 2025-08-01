@@ -7,3 +7,6 @@ update:
 
 clean:
 	git reset
+
+run:
+	python appy.py
