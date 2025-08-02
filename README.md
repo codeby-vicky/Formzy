@@ -111,12 +111,13 @@ You’re now live!
 ---
 
 ## 📸 Screenshots
+[!screenshots] (screenshots/Picture1.png)
+
 
 ### 🔻 Project Folder Structure
 
 ![Project Structure](./8ff0bcd0-a7f4-45f8-b7d7-604e880920e0.png)
 
-> *(Add more UI screenshots here like generated form pages, logs view, etc.)*
 
 ---
 
@@ -142,6 +143,3 @@ This project is licensed under the **MIT License**.
 
 ---
 
-
-Let me know if you want help generating UI screenshots or `requirements.txt` too!
-```
